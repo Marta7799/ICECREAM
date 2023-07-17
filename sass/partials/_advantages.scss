@@ -1,0 +1,166 @@
+.advantages {
+  background-color: #84a178;
+  color: #fcfcfc;
+  padding-top: 50px;
+  padding-bottom: 48px;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 68px;
+
+  @include mobile {
+    padding-top: 60px;
+    padding-bottom: 81px;
+  }
+
+  @include tablet {
+    padding-top: 80px;
+    padding-bottom: 91px;
+  }
+
+  @include desktop {
+    padding-bottom: 102px;
+  }
+
+  &__container {
+    max-width: 480px;
+    margin: 0 auto;
+    @include tablet {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    @include desktop {
+      max-width: 1200px;
+      padding-top: 60px;
+      padding-bottom: 80px;
+      margin: auto;
+    }
+  }
+
+  &__header:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+    padding: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    list-style-type: none;
+
+    @include mobile {
+      gap: 32px;
+    }
+
+    @include tablet {
+      gap: 32px;
+      justify-content: space-around;
+      flex-direction: row;
+    }
+
+    @include desktop {
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 32px;
+    }
+  }
+
+  &__text {
+    color: #fcfcfc;
+    text-align: center;
+    font-size: 12px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 176%;
+    margin-bottom: -20px;
+    width: 230px;
+    //margin-bottom: 81px;
+    @include tablet {
+      font-size: 14px;
+      line-height: 174%;
+      margin-bottom: 30px;
+      width: 152px;
+      margin-top: 12px;
+    }
+    @include desktop {
+      font-size: 16px;
+      width: 260px;
+      margin-top: 12px;
+    }
+  }
+  &__element {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+    }
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    background-color: #f8d24e;
+    width: 50px;
+    height: 50px;
+    padding: 7px;
+    margin: 0 auto;
+  }
+
+  &__number {
+    color: #fcfcfc;
+    text-align: center;
+    font-size: 36px;
+    line-height: normal;
+    letter-spacing: 1.44px;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 22px;
+    margin-bottom: 16px;
+
+    @include mobile {
+      margin-top: 16px;
+    }
+
+    @include tablet {
+      margin-bottom: 12px;
+      font-size: 48px;
+      letter-spacing: 1.92px;
+    }
+    @include desktop {
+      font-size: 58px;
+      letter-spacing: 2.32px;
+    }
+  }
+
+  &__figure {
+    margin-top: 0px;
+
+    @include tablet {
+      max-width: 152px;
+    }
+    @include desktop {
+      max-width: 300px;
+    }
+  }
+}
