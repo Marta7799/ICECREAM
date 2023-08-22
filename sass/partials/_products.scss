@@ -14,290 +14,545 @@
 ul {
   list-style: none;
 }
+.container {
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  @include mobile {
+    max-width: 480px;
+  }
+  @include tablet {
+    max-width: 768px;
+  }
+  @include desktop {
+    max-width: 1200px;
+  }
+}
 .products {
   background-image: url(../images/Backgroud_mobile@1x.jpg);
-  background-position: cover;
-
-  @media screen and (min-device-pixel-ratio: 2),
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  @media (min-device-pixel-ratio: 2),
     (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     background-image: url(../images/Backgroud_mobile@2x.jpg);
   }
-
   @include tablet {
     background-image: url(../images/Background_tablet@1x.jpg);
-
-    @media screen and (min-device-pixel-ratio: 2),
+    @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       background-image: url(../images/Background_tablet@2x.jpg);
     }
   }
-
   @include desktop {
     background-image: url(../images/Backgroud_desktop@1x.jpg);
-
-    @media screen and (min-device-pixel-ratio: 2),
+    @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       background-image: url(../images/Backgroud_desktop@2x.jpg);
     }
   }
-
-  &__main-text {
-    font-size: $fs18;
-    font-family: $montserrat-fonts;
+  &__label {
+    color: #131313;
+    font-family: "Montserrat", sans-serif;
     font-weight: 800;
+    font-size: 18px;
+    line-height: 1.2;
     text-transform: uppercase;
     text-align: center;
     padding-top: 60px;
-
+    margin: 0;
     @include tablet {
-      font-size: $fs22;
+      font-size: 22px;
     }
-
     @include desktop {
-      font-size: $fs30;
+      font-size: 30px;
     }
   }
-
-  &__main-title {
-    font-family: $seymour-fonts;
-    font-size: $fs30;
+  &__title {
+    color: $textBlack;
+    font-family: "Seymour One", sans-serif;
     font-weight: 400;
-    letter-spacing: 1.2px;
+    font-size: 30px;
+    line-height: 1.26;
     text-transform: uppercase;
-    margin-block: 12px 40px;
     text-align: center;
-
+    margin-top: 12px;
     @include tablet {
-      margin-block: 12px 80px;
-      font-size: $fs34;
+      font-size: 34px;
     }
-
     @include desktop {
-      font-size: $fs36;
+      font-size: 36px;
     }
   }
-
-  &__flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  &__list {
+    padding: 0;
 
     @include tablet {
-      flex-direction: row;
+      display: flex;
       gap: 16px;
+      padding: 0;
     }
-
     @include desktop {
+      display: flex;
       gap: 29px;
     }
   }
+  &__name {
+    color: $textBlack;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.22;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 123px;
+    margin-bottom: 0px;
 
-  &__space {
+    @include mobile {
+      padding-top: 126px;
+    }
+
+    @include tablet {
+      font-size: 22px;
+      padding-top: 108px;
+    }
+    @include desktop {
+      font-size: 30px;
+      padding-top: 160px;
+    }
+  }
+  &__text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.77;
+    letter-spacing: 0.04em;
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+    @include tablet {
+      width: 172px;
+    }
+    @include desktop {
+      width: 246px;
+      font-size: 16px;
+      margin-top: 30px;
+    }
+  }
+  &__flex-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-  }
-
-  &__ice {
-    position: relative;
-    bottom: 80px;
-    background-color: $first-product-card-color;
-    max-width: 320px;
-    height: 428px;
-    border-radius: 24px;
-    padding-inline: 60px;
-    transition: transform 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
-
-    &:hover,
-    &focus {
-      transform: scale(1.04);
-    }
+    justify-content: space-between;
+    gap: 48px;
 
     @include tablet {
-      padding-inline: 26px;
+      height: 65%;
+      gap: 55px;
+    }
+    @include desktop {
+      height: 55%;
     }
 
-    @include desktop {
-      padding-inline: 64px;
-      height: 536px;
-      max-width: 370px;
-      position: relative;
-      top: -130px;
+    &--gap {
+      gap: 81px;
+    }
+
+    &--gap-small {
+      gap: 31px;
+
+      @include desktop {
+        gap: 55px;
+      }
     }
   }
-
-  &__coffee {
-    position: relative;
-    bottom: 80px;
-    background-color: $second-product-card-color;
-    max-width: 320px;
-    height: 428px;
-    border-radius: 24px;
-    padding-inline: 60px;
-    transition: transform 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
-    &:hover,
-    &focus {
-      transform: scale(1.04);
-    }
-
-    @include tablet {
-      padding-inline: 26px;
-    }
-
-    @include desktop {
-      padding-inline: 64px;
-      height: 536px;
-      max-width: 370px;
-      position: relative;
-      top: -130px;
-    }
-  }
-
-  &__milkshake {
-    position: relative;
-    bottom: 80px;
-    background-color: $third-product-card-color;
-    max-width: 320px;
-    height: 428px;
-    border-radius: 24px;
-    padding-inline: 60px;
-    transition: transform 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
-    &:hover,
-    &focus {
-      transform: scale(1.04);
-    }
-
-    @include tablet {
-      padding-inline: 26px;
-    }
-
-    @include desktop {
-      position: relative;
-      top: -130px;
-      padding-inline: 64px;
-      height: 536px;
-      max-width: 370px;
-    }
-  }
-
-  &__title {
-    color: $primary-text-color;
-    padding-top: 126px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    font-weight: 700;
-    font-size: $fs20;
-    font-family: $montserrat-fonts;
-
-    @include tablet {
-      padding-top: 108px;
-      font-size: $fs22;
-    }
-
-    @include desktop {
-      padding-top: 168px;
-      font-size: $fs30;
-    }
-  }
-
-  &__text {
-    color: $primary-text-color;
-    text-align: center;
-    font-family: $montserrat-fonts;
-    font-weight: 400;
-    font-size: $fs14;
-    letter-spacing: 0.56px;
-    line-height: 1.71;
-    padding-block: 40px 93px;
-
-    @include tablet {
-      padding-block: 40px 78px;
-    }
-
-    @include desktop {
-      padding-block: 66px 126px;
-    }
-  }
-
-  &__icons {
-    background-color: transparent;
-    position: absolute;
-    left: 44%;
-    bottom: 16px;
+  &__button {
+    background: none;
     border: none;
-    transition: transform 400ms ease-in-out;
-
-    &:hover,
-    &:focus {
-      transform: translate(50%) scale(1.4);
+    margin: 0 auto;
+    display: flex;
+    cursor: pointer;
+    @include tablet {
+      margin-bottom: 30px;
     }
+    @include desktop {
+      margin-bottom: 64;
+    }
+  }
+}
+.products__item {
+  width: 280px;
+  height: 420px;
+  border-radius: 24px;
+  margin: 0 auto;
+  margin-top: 168px;
+  margin-bottom: 60px;
+  @include tablet {
+    width: 224px;
+    height: 428px;
+    margin-top: 184px;
+    margin-bottom: 44px;
+  }
+  @include desktop {
+    width: 370px;
+    height: 536px;
+    margin-top: 273px;
+  }
+  &--ice-cream {
+    background-color: #aec6a5;
+    margin-top: 148px;
 
-    @include mobile_2 {
-      left: 140px;
+    @include mobile {
+      margin-top: 145px;
     }
 
     @include tablet {
-      bottom: 12px;
-      left: 93px;
+      margin-top: 184px;
     }
 
     @include desktop {
-      bottom: 60px;
-      left: 165px;
+      margin-top: 273px;
     }
   }
+  &--ice-coffee {
+    background-color: #efd478;
+  }
+  &--milkshakes {
+    background-color: #d6936d;
+  }
+}
+.ice-cream {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  position: absolute;
+  translate: 20% -50%;
+  z-index: 20;
+  @include tablet {
+    translate: 5% -70%;
+  }
+  @include desktop {
+    width: 302px;
+    height: 302px;
+    translate: 26% -50%;
+  }
+  &__img {
+    width: 200px;
+    height: 200px;
+    @include desktop {
+      width: 302px;
+      height: 302px;
+      translate: -15% -10%;
+    }
+  }
+}
 
+.ice-cream::before {
+  content: "";
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border-radius: 50%;
+  top: 16px;
+  z-index: -10;
+  box-shadow: 0 8px 30px rgba(10, 136, 23, 0.25);
+  background-image: linear-gradient(
+    rgba(156, 190, 143, 0.7),
+    rgba(156, 190, 143, 0.7)
+  );
+  @include tablet {
+    top: 12px;
+  }
+  @include desktop {
+    width: 302px;
+    height: 302px;
+    translate: -15% -10%;
+    top: 16px;
+  }
+}
+.ice-coffee {
+  @extend .ice-cream;
+  &__img {
+    @extend .ice-cream__img;
+  }
+}
+.ice-coffee::before {
+  content: "";
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border-radius: 50%;
+  top: 16px;
+  z-index: -10;
+  box-shadow: 0 8px 30px rgba(153, 114, 23, 0.25);
+  background-image: linear-gradient(
+    rgba(248, 210, 78, 0.7),
+    rgba(248, 210, 78, 0.7)
+  );
+  @include tablet {
+    top: 12px;
+  }
+  @include desktop {
+    width: 302px;
+    height: 302px;
+    translate: -15% -10%;
+    top: 16px;
+  }
+}
+.milkshakes {
+  @extend .ice-cream;
+  &__img {
+    @extend .ice-cream__img;
+  }
+}
+.milkshakes::before {
+  content: "";
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border-radius: 50%;
+  top: 16px;
+  z-index: -10;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  background-image: linear-gradient(
+    rgba(213, 117, 63, 0.7),
+    rgba(213, 117, 63, 0.7)
+  );
+  @include tablet {
+    top: 12px;
+  }
+  @include desktop {
+    width: 302px;
+    height: 302px;
+    translate: -15% -10%;
+    top: 16px;
+  }
+}
+.products-is-hidden {
+  pointer-events: none;
+  visibility: none;
+  opacity: 0;
+  transform: scale(0);
+}
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  height: 100%;
+  cursor: not-allowed;
+  transform: scale(1);
+  background-color: #00000033;
+}
+.products-modal {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  background-color: $textWhite;
+  visibility: visible;
+  display: block;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
+  border-radius: 20px;
+  border: 2px solid $secondaryBrandColor;
+  width: 280px;
+  height: 82%;
+
+  @include tablet {
+    width: 568px;
+    top: 30px;
+  }
+  @include desktop {
+    width: 568px;
+    top: 30px;
+  }
+  &__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    top: 12px;
+    right: 12px;
+    background-color: $textWhite;
+    border: none;
+    position: absolute;
+    cursor: pointer;
+    @include desktop {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &__title {
+    font-family: "Seymour One", sans-serif;
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 1.4;
+    color: $textBlack;
+    display: block;
+    margin: 0 auto;
+    margin-top: 28px;
+    width: 142px;
+    height: 56px;
+
+    @include desktop {
+      margin-top: 32px;
+    }
+  }
   &__img {
     display: block;
-    position: relative;
-    border-radius: 50%;
-    z-index: 2;
-  }
-}
-.products__picture-overlay {
-  position: relative;
-  z-index: 1;
-  border-radius: 50%;
-
-  &::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    border-radius: 50%;
-    padding-bottom: 80%;
-    position: absolute;
-    top: 11px;
-    left: 50%;
-    transform: translateX(-50%);
-    @include tablet {
-      top: 12px;
-    }
+    margin: 0 auto;
+    margin-top: 20px;
     @include desktop {
-      top: 16px;
+      margin-top: 24px;
     }
   }
+  &__button {
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.22;
+    width: 132px;
+    height: 42px;
+    font-size: 14px;
+    background-color: $secondaryBrandColor;
+    border: 2px solid $secondaryBrandColor;
+    border-radius: 10px;
+    margin-top: 24px;
+    margin-bottom: 28px;
+    cursor: pointer;
+    @include desktop {
+      width: 121px;
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 40px;
+    @include desktop {
+      width: 368px;
+      margin-top: 30px;
+    }
+  }
+  &__input {
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    width: 240px;
+    height: 42px;
+    font-size: 14px;
+    line-height: 1.76;
+    background-color: rgba(248, 210, 78, 0.1);
+    border: 1px solid $firstBrandColor;
+    border-radius: 10px;
+    padding: 11px 16px;
+  }
+  &__feedback {
+    @extend .products-modal__input;
+    height: 84px;
+    resize: none;
+  }
 }
-.products__picture-overlay__one::before {
-  background-color: $first-product-shadow-color;
-  box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+.value {
+  display: flex;
+  gap: 9px;
+  list-style-position: inside;
+  margin-top: 22px;
+  text-align: center;
+  justify-content: center;
+  @include desktop {
+    margin-top: 24px;
+  }
+  &__item {
+    width: 53px;
+    height: 72px;
+    border-radius: 40px;
+    border: 2px solid #9cbe8f;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.22;
+    color: #131313;
+    @include desktop {
+      font-size: 12px;
+      width: 65px;
+      height: 90px;
+    }
+  }
+  &__roundborder {
+    width: 43px;
+    height: 43px;
+    border-radius: 50px;
+    background-color: #9cbe8f;
+    border: 2px solid #9cbe8f;
+    position: relative;
+    top: -1px;
+    left: 3px;
+    box-shadow: 0 12px 25px #9cbe8f;
+    @include desktop {
+      width: 53px;
+      height: 53px;
+    }
+  }
+  &__number {
+    position: relative;
+    top: 6px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 2.8;
+    color: #131313;
+    margin: 0 auto;
+    @include desktop {
+      font-size: 12px;
+      line-height: 2.3;
+    }
+  }
+  &__legend {
+    position: relative;
+    top: 24px;
+  }
 }
-.products__picture-overlay__two::before {
-  background-color: $second-product-shadow-color;
-  box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
+.ingredients {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #131313;
+  text-align: center;
+  margin-top: 40px;
+  &__box {
+    margin-left: 20px;
+    margin-right: 20px;
+    @include desktop {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+  }
+  &__list {
+    flex-direction: column;
+    gap: 11px;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.76;
+    color: #131313;
+  }
 }
-.products__picture-overlay__three::before {
-  background-color: $third-product-shadow-color;
-  box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.25);
-}
-//$first-product-shadow-color; $second-product-shadow-color;$third-product-shadow-color;
